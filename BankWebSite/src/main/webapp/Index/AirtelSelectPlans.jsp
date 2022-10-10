@@ -181,13 +181,13 @@
 	<section class="header">
 	
 	    <nav>
-				<a href="MobileRecharge.jsp"><img src="horizontal_on_white_by_logaster.png" alt="bank logo"></a>
+				<a href="MobileRecharge.jsp"><img src="Images/horizontal_on_white_by_logaster.png" alt="bank logo"></a>
 					
 		</nav>
 		
 		<div class="jioLogo">
 		
-			<img src="AirtelLogo.png" alt="Airtel Prepaid">
+			<img src="Images/AirtelLogo.png" alt="Airtel Prepaid">
 			<h1>Airtel Prepaid</h1><br>
 			<h1>Select plan</h1><br>
 			

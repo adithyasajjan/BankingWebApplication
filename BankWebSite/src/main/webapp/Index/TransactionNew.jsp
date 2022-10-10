@@ -17,26 +17,6 @@
 	<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;600;700&display=swap" rel="stylesheet">
 
 	<style>
-	
-		*{
-		
-               margin: 0;
-               padding: 0;
-               box-sizing: border-box;
-               font-family: 'Poppins', sans-serif;
-		
-		}
-		
-		.header{
-               
-            min-height: 10vh;
-			width: 100%;
-			background-image: linear-gradient(rgba(4, 9, 30, 0.7), rgba(4, 9, 30, 0.7)), url('banner.jpg'); 
-			background-color:white;
-			background-position: center;
-			background-size: cover;
-			position: relative;
-		}
 		
 		body {
 			
@@ -47,16 +27,6 @@
 		nav img:hover {
 			opacity: 0.3;
 			filter: alpha(opacity=30);
-		}
-		
-		.border{
-		
-			width: 800px;
-		    border: 15px solid black;
-		    padding: 50px;
-		    margin-top: 0px;
-		    text-align:center;
-		    margin-left:430px;
 		}
 		
 		
@@ -90,87 +60,119 @@
 			width: 150px;
 		}
 		
+		input {
+			width: 200px;
+            height: 30px;
+            margin: 10px;
+            background: black;
+            color: white;
+            font-size: 18px;
+            cursor: pointer;
+            border: none;
+		}
+		
 		tr:nth-child(even) {background: #CCC}
 		tr:nth-child(odd) {background: #FFF}
 		
 	</style>
 	
 </head>
+
 <body>
 	
-	<section class="header">
-			<nav>
-					<a href="Functions.jsp"><img src="horizontal_on_white_by_logaster.png" alt="bank logo"></a>
-						
-			</nav>
-	</section>	
-	<br>
+	<nav>
+			<a href="Functions.jsp"><img src="Images/horizontal_on_white_by_logaster.png" alt="bank logo"></a>
+				
+	</nav>
+	
 	<h1 style="color:black;font-size=30px; margin-left:50px;">BANK STATEMENT</h1><br>
 	
-	<div class="border">
-		<table id="example-table" border="1">
-			<thead>
+	<table id="example-table" border="1" style="width: 80%">
+		<thead>
+			<tr>
+				<td>DATE</td>
+				<td>PAID TO</td>
+				<td>AMOUNT</td>
+				<td>DESCRIPTION</td>
+				<td>Dr/Cr</td>
+				<td>BALANCE</td>
+			</tr>
+		</thead>
+		
+		<tbody>
+		
+			<% for(int recCount=0; recCount<TransDetails.size(); recCount++) { %>
 				<tr>
-					<td>DATE</td>
-					<td>PAID TO</td>
-					<td>AMOUNT</td>
-					<td>DESCRIPTION</td>
-					<td>Dr/Cr</td>
-					<td>BALANCE</td>
+					<% TransactionUser tran = TransDetails.get(recCount); %>
+					<td><%= tran.getDt() %></td>
+					<td><%= tran.getToName() %></td>
+					<td><%= tran.getAmount() %></td>
+					<td><%= tran.getDescrip() %></td>
+					<td><%= tran.getDrORCr() %></td>
+					<td><%= tran.getBalance() %></td>
 				</tr>
-			</thead>
-			
-			<tbody>
-			
-				<% for(int recCount=0; recCount<TransDetails.size(); recCount++) { %>
-					<tr>
-						<% TransactionUser tran = TransDetails.get(recCount); %>
-						<td><%= tran.getDt() %></td>
-						<td><%= tran.getToName() %></td>
-						<td><%= tran.getAmount() %></td>
-						<td><%= tran.getDescrip() %></td>
-						<td><%= tran.getDrORCr() %></td>
-						<td><%= tran.getBalance() %></td>
-					</tr>
-					
-				<% } %>
 				
-			</tbody>
-		
-		</table> <br>
-		
-		<button id="d1-pdf">Print</button>
-	
-	</div>
-
-
-	
-	<script src="html2pdf.bundle.min.js"></script>
-	
-	<script type="text/javascript">
-		document.getElementById('d1-pdf').onclick = function() {
-			var element = document.getElementById('example-table');
+			<% } %>
 			
-			var opt = {
-				margin: 			1,
-				filename: 			'<%= name %>.pdf',
-				image: 				{ type: 'jpeg', quality: 0.98 },
-				html2canvas: 		{scale: 2},
-				jsPDF: 				{unit: 'in', format: 'letter', orientation: 'portrait'}	
-			};
-			
-			html2pdf(element, opt);
-		};
-		
+		</tbody>
+	
+	</table> <br>
+	
+	<input type="button" onclick="generate()" value="Print"/>
+	<script>
+	function generate() {
+	    var doc = new jsPDF('p', 'pt', 'a4');
+	    var htmlstring = '';
+	    var tempVarToCheckPageHeight = 0;
+	    var pageHeight = 0;
+	    pageHeight = doc.internal.pageSize.height;
+	    specialElementHandlers = {
+	        '#bypassme': function (element, renderer) {
+	            return true
+	        }
+	    };
+	    margins = {
+	        top: 150,
+	        bottom: 60,
+	        left: 40,
+	        right: 40,
+	        width: 700
+	    };
+	    var y = 20;
+	    doc.setLineWidth(2);
+	    doc.text(200, y = y + 30, "Transactions");
+	    doc.autoTable({
+	        html: '#example-table',
+	        startY: 70,
+	        theme: 'grid',
+	        columnStyles: {
+	            0: {
+	                cellWidth: 90,
+	            },
+	            1: {
+	                cellWidth: 50,
+	            },
+	            2: {
+	                cellWidth: 60,
+	            },
+	            3: {
+	                cellWidth: 100,
+	            },
+	            4: {
+	                cellWidth: 50,
+	            },
+	            5: {
+	                cellWidth: 50,
+	            }
+	        },
+	        styles: {
+	            minCellHeight: 40
+	        }
+	    })
+	    doc.save('<%= name %>.pdf');
+	}
 	</script>
-	
-	<script type = "text/javascript" >
-	
-	    function preventBack() { window.history.forward(); }
-	    setTimeout("preventBack()", 0);
-	    window.onunload = function () { null };
-	    
-	</script>
-	
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.5.3/jspdf.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf-autotable/3.5.6/jspdf.plugin.autotable.min.js"></script>
 </body>
 </html>

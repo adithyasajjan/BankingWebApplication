@@ -1,15 +1,27 @@
 use ServletUser;
 show tables;
 
-show databases;
+create table RegisterDetails(accNo int auto_increment, username varchar(20), passwd varchar(20), pin int, balance double, primary key(accNo));
 
-select * from  Beneficiary;
 
-select * from Transaction;
+create table User(username varchar(20), passwd varchar(20), pin int);
 
-delete from Transaction;
 
-create table ElectricityBill(consumerNo int, name varchar(20), ElectricityBiller varchar(20), Consumption int, BillDate date, BillDueDate date, PaymentDate date, PaymentStatus varchar(50), BillAmount double);
+create table Transaction(accNo int, dt datetime, Paid_To varchar(20), amount double, description varchar(20), DrORCr varchar(10), balance double);
+
+
+create table Transfer(Ben_AccNo int, Ben_Name varchar(20), amount double, balance double);
+
+
+create table Beneficiary(accNo int, name varchar(20));
+
+insert into Beneficiary values(3, "Umar");
+insert into Beneficiary values(4, "Venkatesh");
+insert into Beneficiary values(5, "Pramod");
+insert into Beneficiary values(6, "Pavan");
+
+create table ElectricityBill(consumerNo int, name varchar(20), ElectricityBiller varchar(20), Consumption int, BillDate date, BillDueDate date, 
+PaymentDate date, PaymentStatus varchar(50), BillAmount double);
 
 insert into ElectricityBill values(1, "Sanjeev", "BESCOM", 274, "2022-09-29", "2022-10-29", "2022-10-22", "Pending", 2450);
 insert into ElectricityBill values(2, "Adithya", "BESCOM", 125, "2022-09-29", "2022-10-29", "2022-10-22", "Pending", 1000);
@@ -18,41 +30,9 @@ insert into ElectricityBill values(4, "Venkatesh", "BESCOM", 346, "2022-09-29", 
 insert into ElectricityBill values(5, "Thriveni", "MESCOM", 100, "2022-09-29", "2022-10-29", "2022-10-22", "Pending", 300);
 insert into ElectricityBill values(6, "Niranjan", "HESCOM", 60, "2022-09-29", "2022-10-29", "2022-10-22", "Pending", 120);
 
-delete from ElectricityBill;
-
-select BillAmount from ElectricityBill where PaymentStatus = 'Pending';
-
-insert into ElectricityBill(PaymentDate) values("2022-10-22");
-
-update ElectricityBill set PaymentDate="2022-10-22" where consumerNo=1;
-
-select * from ElectricityBill;
-
-select BillAmount from ElectricityBill where consumerNo=1;
-
-select * from RegisterDetails;
-
-update ElectricityBill set PaymentStatus="Pending" where consumerNo=1;
-
-update ElectricityBill set PaymentStatus="Pending" where consumerNo=1;	
-
-drop table ElectricityBill;
-
-delete from ElectricityBill where PaymentDate="2022-10-22";
-
-select * from Transaction;
-
-delete from Transaction;
 
 create table Fastag(name varchar(20), vehicleNum varchar(30), vehicleName varchar(20), amount double);
-insert into Fastag(name, vehicleNum, vehicleName) values("Sanjeev", "AP 05 BV 7917", "Maruthi");
+insert into Fastag(name, vehicleNum, vehicleName) values("Sanjeev", "AP 05 BV 7917", "Mahindra Scorpio");
+insert into Fastag(name, vehicleNum, vehicleName) values("Adithya", "KA 16 MP 2423", "Ford Figo");
+insert into Fastag(name, vehicleNum, vehicleName) values("Shivu", "KA 05 QM 5463", "MAruthi Suzuki Brezza");
 
-delete from Fastag where vehicleNum="AP 05 BV 7917";
-
-select * from Fastag;
-
-create table fname(fullname varchar(20));
-
-drop table fname;
-
-select * from User;

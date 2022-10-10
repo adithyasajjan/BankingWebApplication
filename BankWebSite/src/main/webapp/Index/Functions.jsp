@@ -127,7 +127,7 @@
 <body>
 		<section class="header">
 			<nav>
-				<a href="Functions.jsp"><img src="horizontal_on_white_by_logaster.png" alt="bank logo"></a>
+				<a href="Functions.jsp"><img src="Images/horizontal_on_white_by_logaster.png" alt="bank logo"></a>
 					<div class="nav-links">
 						<ul>
 							<li><a href="AccountDetails">ACCOUNT DETAILS</a></li>

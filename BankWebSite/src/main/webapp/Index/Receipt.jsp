@@ -124,7 +124,7 @@
 
 	<section class="header">
 		<nav>
-			<a href="PayBill.jsp"><img src="horizontal_on_white_by_logaster.png" alt="bank logo"></a>
+			<a href="PayBill.jsp"><img src="Images/horizontal_on_white_by_logaster.png" alt="bank logo"></a>
 				
 		</nav>
 		

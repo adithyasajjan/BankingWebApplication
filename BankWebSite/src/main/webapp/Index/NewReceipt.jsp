@@ -52,15 +52,6 @@
 			filter: alpha(opacity=30);
 		}
 		
-		.border{
-		
-			width: 500px;
-		    border: 15px solid black;
-		    padding: 50px;
-		    margin: 20px;
-		    margin-left:600px;
-		}
-		
 		#example-table {
 			border-collapse: collapse;
 			margin: auto;
@@ -74,6 +65,18 @@
 		
 		#d1-pdf {
 			padding: 5px;
+		}
+		
+		button {
+			width: 100px;
+            height: 30px;
+            margin: 10px;
+            background: black;
+            color: white;
+            font-size: 18px;
+            cursor: pointer;
+            border: none;
+            margin-left:20px;
 		}
 		
 		table {
@@ -99,75 +102,70 @@
 	</style>
 </head>
 <body>
-
-	<section class="header">
 		<nav>
-				<a href="PayBill.jsp"><img src="horizontal_on_white_by_logaster.png" alt="bank logo"></a>
+				<a href="PayBill.jsp"><img src="Images/horizontal_on_white_by_logaster.png" alt="bank logo"></a>
 					
 		</nav>
-	</section>
 	
 	<br><br>
 	
 	<h1 style="color:black;font-size:30px;">RECEIPT</h1><br>
 	
-	<div class="border">
 	
-		<table id="example-table">
-			<tbody>
-					<% for(int recCount=0; recCount<billDetails.size(); recCount++) { %>
-						
-							<% PayBillUser pb = (PayBillUser)billDetails.get(recCount); %>
-							
-							<tr><td></td></tr>	
-							<tr><td></td></tr>
-							<tr><td>Name : </td><td></td><td><%= pb.getName() %></td></tr>
-							<tr><td>Consumer Number : </td><td></td><td><%= pb.getConsNum() %></td></tr>
-							<tr><td></td></tr>	
-							<tr><td></td></tr>
-							 
-							<TH COLSPAN=5><hr> 
-							
-							<tr><td></td></tr>	
-							<tr><td></td></tr> 
-							
-							<tr><td>Electricity Biller : </td><td></td><td><%= pb.getElecProvider() %></td></tr>
-							<!-- <tr><td></td></tr>	
-							<tr><td></td></tr> -->
-							<tr><td>Consumption : </td><td></td><td><%= pb.getConsump() %> units</td></tr>
-							<!-- <tr><td></td></tr>	
-							<tr><td></td></tr> -->
-							<tr><td>Bill Date : </td><td></td><td><%= pb.getBd() %></td></tr>
-							<!-- <tr><td></td></tr>	
-							<tr><td></td></tr> -->
-							<tr><td>Bill Due Date : </td><td></td><td><%= pb.getBdd() %></td></tr>
-							
-							<tr><td>Payment Date : </td><td></td><td><%= pb.getPd() %></td></tr>
-							
-							<tr><td>Payment Status : </td><td></td><td><%= pb.getStatus() %></td></tr>
-							<tr><td></td></tr>	
-							<tr><td></td></tr> 
-							
-							<TH COLSPAN=5><hr>
-							
-							<tr><td></td></tr>	
-							<tr><td></td></tr> 		
-							<%-- <tr style="color:white;"><td>Payment Date : </td><td style="text-align:center;"><%= pb.getPd() %></td></tr>
-							<tr><td></td></tr>	
-							<tr><td></td></tr> --%>
-							<tr><td>Bill Amount : </td><td></td><td>Rs. <%= pb.getAmount() %></td></tr>
-							<tr><td></td></tr>	
-							<tr><td></td></tr>
-							 	
-					<% } %>
+	<table id="example-table">
+		<tbody>
+				<% for(int recCount=0; recCount<billDetails.size(); recCount++) { %>
 					
-			</tbody>
-			
-		</table><br>
+						<% PayBillUser pb = (PayBillUser)billDetails.get(recCount); %>
+						
+						<tr><td></td></tr>	
+						<tr><td></td></tr>
+						<tr><td>Name : </td><td></td><td><%= pb.getName() %></td></tr>
+						<tr><td>Consumer Number : </td><td></td><td><%= pb.getConsNum() %></td></tr>
+						<tr><td></td></tr>	
+						<tr><td></td></tr>
+						 
+						<TH COLSPAN=5><hr> 
+						
+						<tr><td></td></tr>	
+						<tr><td></td></tr> 
+						
+						<tr><td>Electricity Biller : </td><td></td><td><%= pb.getElecProvider() %></td></tr>
+						<!-- <tr><td></td></tr>	
+						<tr><td></td></tr> -->
+						<tr><td>Consumption : </td><td></td><td><%= pb.getConsump() %> units</td></tr>
+						<!-- <tr><td></td></tr>	
+						<tr><td></td></tr> -->
+						<tr><td>Bill Date : </td><td></td><td><%= pb.getBd() %></td></tr>
+						<!-- <tr><td></td></tr>	
+						<tr><td></td></tr> -->
+						<tr><td>Bill Due Date : </td><td></td><td><%= pb.getBdd() %></td></tr>
+						
+						<tr><td>Payment Date : </td><td></td><td><%= pb.getPd() %></td></tr>
+						
+						<tr><td>Payment Status : </td><td></td><td><%= pb.getStatus() %></td></tr>
+						<tr><td></td></tr>	
+						<tr><td></td></tr> 
+						
+						<TH COLSPAN=5><hr>
+						
+						<tr><td></td></tr>	
+						<tr><td></td></tr> 		
+						<%-- <tr style="color:white;"><td>Payment Date : </td><td style="text-align:center;"><%= pb.getPd() %></td></tr>
+						<tr><td></td></tr>	
+						<tr><td></td></tr> --%>
+						<tr><td>Bill Amount : </td><td></td><td>Rs. <%= pb.getAmount() %></td></tr>
+						<tr><td></td></tr>	
+						<tr><td></td></tr>
+						 	
+				<% } %>
+				
+		</tbody>
 		
-		<button id="d1-pdf">Print</button>
+	</table><br>
 	
-	</div>
+	<button id="d1-pdf">Print</button>
+	
 	
 	<script src="html2pdf.bundle.min.js"></script>
 	

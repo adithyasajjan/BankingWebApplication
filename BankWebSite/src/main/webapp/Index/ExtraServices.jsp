@@ -178,7 +178,7 @@
 	<section class="header">
 	
 	    <nav>
-				<a href="Functions.jsp"><img src="horizontal_on_white_by_logaster.png" alt="bank logo"></a>
+				<a href="Functions.jsp"><img src="Images/horizontal_on_white_by_logaster.png" alt="bank logo"></a>
 				<div class="nav-links">
 						<ul>
 							
@@ -200,18 +200,18 @@
 				</div> 
 			
 			    <div class="img1">
-					<a href="PayBill.jsp"><img src="electricity-recharge.png" alt="electricty-recharge"></a>
+					<a href="PayBill.jsp"><img src="Images/electricity-recharge.png" alt="electricty-recharge"></a>
 					<h3>Electricity</h3>
 			     </div>
 			     
 			     
 			     <div class="img1">
-			     	<a href="MobileRecharge.jsp"><img src="mobile-recharge.jpg" alt="mobile-recharge"></a>
+			     	<a href="MobileRecharge.jsp"><img src="Images/mobile-recharge.jpg" alt="mobile-recharge"></a>
 			     	<h3>Mobile recharge</h3>
 			     </div>
 			     
 			     <div class="img1">
-			     	<a href="FASTag.jsp"><img src="FasTag-recharge.png" alt="fastag-recharge"></a>
+			     	<a href="FASTag.jsp"><img src="Images/FasTag-recharge.png" alt="fastag-recharge"></a>
 			     	<h3>FASTag recharge</h3>
 			     </div>	
 			     	

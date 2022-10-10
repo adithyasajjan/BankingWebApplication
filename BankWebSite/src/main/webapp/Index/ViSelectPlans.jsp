@@ -180,13 +180,13 @@
 	<section class="header">
 	
 	    <nav>
-				<a href="MobileRecharge.jsp"><img src="horizontal_on_white_by_logaster.png" alt="bank logo"></a>
+				<a href="MobileRecharge.jsp"><img src="Images/horizontal_on_white_by_logaster.png" alt="bank logo"></a>
 					
 		</nav>
 		
 		<div class="jioLogo">
 		
-			<img src="Vi.png" alt="Vi Prepaid">
+			<img src="Images/Vi.png" alt="Vi Prepaid">
 			<h1>Vi Prepaid</h1><br>
 			<h1>Select plan</h1><br>
 			
