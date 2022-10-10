@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>TableExp</title>
+
+	<style>
+		
+		body {
+			
+			font-family: sans-serif;
+			text-align: center;
+		}
+		
+		th {
+			background-color: rgb(211, 211, 211);
+		}
+		
+		#example-table {
+			border-collapse: collapse;
+			margin: auto;
+			font-size: medim;
+		}
+		
+		#example-table td, #example-table th {
+			border: 1px, solid #ddd;
+			padding: 6px;
+		}
+		
+		#d1-pdf {
+			padding: 4px;
+		}
+		
+	</style>
+</head>
+<body>
+	<table id="example-table">
+		<thead>
+		
+		  <tr>
+		    <th>Company</th>
+		    <th>Contact</th>
+		    <th>Country</th>
+		  </tr>
+		  
+		 </thead>
+		 </tbody>
+		 
+		  <tr>
+		    <td>Alfreds Futterkiste</td>
+		    <td>Maria Anders</td>
+		    <td>Germany</td>
+		  </tr>
+		  <tr>
+		    <td>Centro comercial Moctezuma</td>
+		    <td>Francisco Chang</td>
+		    <td>Mexico</td>
+		  </tr>
+		  
+		  
+		 </tbody>
+	</table>
+	<br>
+	
+	<button id="d1-pdf">Download as PDF</button>
+	
+	<script src="html2pdf.bundle.min.js"></script>
+	
+	<script type="text/javascript">
+		document.getElementById('d1-pdf').onclick = function() {
+			var element = document.getElementById('example-table');
+			
+			var opt = {
+				margin: 			1,
+				filename: 			'MyFile.pdf',
+				image: 				{ type: 'jpeg', quality: 0.98 },
+				html2canvas: 		{scale: 2},
+				jsPDF: 				{unit: 'in', format: 'letter', orientation: 'portrait'}	
+			};
+			
+			html2pdf(element, opt);
+		};
+		
+	</script>
+	
+</body>
+</html>
