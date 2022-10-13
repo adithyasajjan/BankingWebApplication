@@ -18,4 +18,4 @@
 
 2) If the user has no account, can create one and use the services.
 
-3) The users can also Pay Electricity Bills (or) perform mobile Recharge (or) FASTag Recharge
+3) The users can also Pay Electricity Bills (or) Perform Mobile Recharge (or) FASTag Recharge
