@@ -116,7 +116,7 @@ public class Transfer extends HttpServlet {
 						 * ; out.println("location='Functions.jsp';"); out.println("</script>");
 						 */
 						
-						RequestDispatcher rd = request.getRequestDispatcher("SuccessTck.jsp");
+						RequestDispatcher rd = request.getRequestDispatcher("LoaderTransfer.jsp");
 			            rd.forward(request, response);
 						
 						

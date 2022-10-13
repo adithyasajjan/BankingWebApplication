@@ -97,7 +97,7 @@ public class Withdraw extends HttpServlet {
 						 request.getSession().setAttribute("balance", balance1);
 						 
 						 System.out.println("Balance : "+balance1);
-						 RequestDispatcher rd = request.getRequestDispatcher("SuccessTransfer.jsp");
+						 RequestDispatcher rd = request.getRequestDispatcher("LoaderTransfer.jsp");
 				         rd.forward(request, response);
 						 
 					 }

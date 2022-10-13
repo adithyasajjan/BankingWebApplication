@@ -22,7 +22,7 @@
 	   .header{
 			min-height: 10vh;
 			width: 100%;
-			background-image: linear-gradient(rgba(4, 9, 30, 0.7), rgba(4, 9, 30, 0.7)), url('banner.jpg');
+			background-image: linear-gradient(rgba(4, 9, 30, 0.7), rgba(4, 9, 30, 0.7)), url('Images/banner.jpg');
 			background-position: center;
 			background-size: cover;
 			position: relative;

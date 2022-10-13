@@ -65,7 +65,7 @@ public class Deposit extends HttpServlet {
 				 if(flag > 0) {
 					 
 					 
-					 RequestDispatcher rd = request.getRequestDispatcher("SuccessTransfer.jsp");
+					 RequestDispatcher rd = request.getRequestDispatcher("LoaderTransfer.jsp");
 			         rd.forward(request, response);	 
 			        
 			         request.getSession().setAttribute("balance", balance);

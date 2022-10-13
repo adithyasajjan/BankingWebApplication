@@ -78,6 +78,7 @@
         <button>okay</button>
         
         <h3 style="color:#88B04B">Avail.bal INR <%=balance%></h3>
+        
       </div>
  
 </form>

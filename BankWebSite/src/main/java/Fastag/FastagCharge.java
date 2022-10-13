@@ -86,7 +86,7 @@ public class FastagCharge extends HttpServlet {
 					 
 					 if(flag > 0) {
 						 
-						 RequestDispatcher rd = request.getRequestDispatcher("SuccessTck.jsp");
+						 RequestDispatcher rd = request.getRequestDispatcher("Loader.jsp");
 				         rd.forward(request, response);
 						 
 					 }
