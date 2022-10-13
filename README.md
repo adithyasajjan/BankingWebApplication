@@ -8,11 +8,11 @@
 
 3) Apache Tomcat v9.0 server
 
-# Who can make use of this website,__
+# Who can make use of this website ?
 
   Customers 
   
-# What are the roles of the user,__
+# What are the roles of the user ?
 
 1) User can login and use the services provided by the bank.
 
